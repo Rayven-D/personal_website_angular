@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ApiControllerService } from 'src/app/common/api-controller.service';
 import { Weather } from 'src/assets/data/api-classes/weather';
 import { Loader } from '@googlemaps/js-api-loader';
+import { ApiProjectsRoutingModule } from './api-projects-routing.module';
+import { Router } from '@angular/router';
 
 const loader = new Loader({
   apiKey: "AIzaSyApyHsg5nAjrRwAv7drnS6m9bAj72cpzlA",
@@ -29,7 +31,8 @@ export class ApiProjectsComponent implements OnInit {
   public errorISS: boolean = false;
 
   constructor(
-    private _apiService: ApiControllerService
+    private _apiService: ApiControllerService,
+    private _apiRouter: Router
   ) { }
 
   async ngOnInit() {
@@ -83,6 +86,10 @@ export class ApiProjectsComponent implements OnInit {
       this.errorISS = true;
     }
     this.loadedISS = true;
+  }
+
+  public goToProject(link: string){
+    this._apiRouter.navigate([`/api-projects/${link}`])
   }
 
 }

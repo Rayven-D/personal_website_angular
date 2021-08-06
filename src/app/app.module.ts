@@ -31,6 +31,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSidenavModule} from '@angular/material/sidenav';
 import { MatListModule} from '@angular/material/list';
+import { WeatherAppComponent } from './pages/api-projects/weather-app/weather-app.component';
+import { ApiProjectsRoutingModule } from './pages/api-projects/api-projects-routing.module';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,7 @@ import { MatListModule} from '@angular/material/list';
     GithubReposComponent,
     LoadingComponent,
     MailingComponent,
+    WeatherAppComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,7 +70,8 @@ import { MatListModule} from '@angular/material/list';
     HttpClientModule,
     MatSnackBarModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    ApiProjectsRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
