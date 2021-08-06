@@ -1,7 +1,60 @@
-div{
+.weather-container{
     margin-top: 60px;
     width: 100%;
     height:calc(100vh - 60px);
     overflow: auto;
     background-color: var(--background-color);
+
+    .weather-wrapper{
+        margin: 0 auto;
+        width: 80%;
+        padding-top: 60px;
+        padding-bottom:20px;
+        display:flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .weather-title{
+            border-bottom: 2px solid black;
+            font-size: 35px;
+            font-weight: 500;
+            line-height: 30px;
+            display:flex;
+            justify-content: space-between;
+        }
+
+        .weather-now{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            .weather-now-temp{
+                display:flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 550;
+                span{
+                    font-size: 15rem;
+                    line-height: 15rem;
+
+                }
+                sup{
+                    font-size: 4rem; 
+                    line-height: 4rem;
+                    padding-top:2rem;
+                    align-self: flex-start;
+                }
+            }
+
+            .weather-now-descrip{
+                display:flex;
+                align-items: center;
+                justify-content: center;
+                img{
+                    min-height:15rem;
+                    aspect-ratio: 1 / 1;
+                    filter: brightness(0);
+                }
+            }
+        }
+    }
 }

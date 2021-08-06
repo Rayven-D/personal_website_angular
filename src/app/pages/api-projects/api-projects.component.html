@@ -3,8 +3,7 @@
         <div class="page-title">
             <span class="title">Web Projects</span>
         </div>
-        <button (click)="goToProject('weather-app')">Click me</button>
-        <mat-card class="loading-animation-card api-card">
+        <mat-card class="loading-animation-card api-card" style="cursor: default;">
             <mat-card-title class="loading"> 
                 <span class="loading-animation-title">Loading Animation</span>
             </mat-card-title>
@@ -12,7 +11,7 @@
                 <app-loading></app-loading>
             </mat-card-content>
         </mat-card>
-        <mat-card class="weather-card api-card" *ngIf="loadedWeather else loading">
+        <mat-card class="weather-card api-card" *ngIf="loadedWeather else loading" (click)="goToProject('weather-app')">
             <mat-card-title *ngIf="!errorWeather">
                 <span class="weather-city">{{weather.city}}</span>
             </mat-card-title>

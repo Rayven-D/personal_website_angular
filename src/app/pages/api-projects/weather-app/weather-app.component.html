@@ -1,5 +1,20 @@
-<div>
-    <p>
-        Test
-    </p>
+<div class='weather-container'>
+    <div class='weather-wrapper'>
+        <div class="weather-title">
+            <span class="title">Weather in <span>{{weather.city}}</span></span>
+            <mat-icon style="cursor: pointer;">refresh</mat-icon>
+        </div>
+        <div class="weather-now" *ngIf="loadedWeather else loading">
+            <div class="weather-now-temp">
+                <span class="weather-temp">{{weather.temp}}</span>
+                <sup>°F</sup>
+            </div>
+            <div class="weather-now-descrip">
+                <img src="{{weather.icon}}"/>
+            </div>
+        </div>
+    </div>
 </div>
+<ng-template #loading>
+    <app-loading></app-loading>
+</ng-template>
