@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
+import { UntypedFormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ApiControllerService } from 'src/app/common/api-controller.service';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
-  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+  isErrorState(control: UntypedFormControl | null, form: FormGroupDirective | NgForm | null): boolean {
     const isSubmitted = form && form.submitted;
     return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
   }
@@ -18,16 +18,16 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class MailingComponent implements OnInit {
 
-  public emailFormControl = new FormControl('', [
+  public emailFormControl = new UntypedFormControl('', [
     Validators.required,
     Validators.email,
   ]);
 
-  public bodyFormControl = new FormControl('', [
+  public bodyFormControl = new UntypedFormControl('', [
     Validators.required,
   ])
 
-  public subjectFormControl = new FormControl('', [
+  public subjectFormControl = new UntypedFormControl('', [
     Validators.required,
   ])
 
