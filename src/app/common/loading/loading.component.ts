@@ -8,6 +8,8 @@ import { Component, AfterViewInit, Input } from '@angular/core';
 export class LoadingComponent implements AfterViewInit {
 
   @Input() color: string = "";
+  @Input() displayText: boolean = true;
+  @Input() once: boolean = false;
 
   constructor() { }
 

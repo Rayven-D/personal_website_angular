@@ -31,6 +31,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSidenavModule} from '@angular/material/sidenav';
 import { MatListModule} from '@angular/material/list';
+import { WorkInProgressComponent } from './pages/work-in-progress/work-in-progress.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { MatListModule} from '@angular/material/list';
     GithubReposComponent,
     LoadingComponent,
     MailingComponent,
+    WorkInProgressComponent,
   ],
   imports: [
     BrowserModule,
